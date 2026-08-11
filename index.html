@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC Physics – Hard MCQ & CQ Exam</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', 'Nikosh', 'SolaimanLipi', sans-serif;
+            background: #f2f4f8;
+            margin: 0;
+            padding: 20px;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: #0b3b5c;
+        }
+        .exam-info {
+            display: flex;
+            justify-content: space-between;
+            background: #eef2ff;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .timer-box {
+            color: #b91c1c;
+            font-size: 1.2rem;
+            background: #fee2e2;
+            padding: 5px 15px;
+            border-radius: 30px;
+        }
+        .section-title {
+            background: #dbeafe;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin: 25px 0 15px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .question-block {
+            background: #f8fafc;
+            padding: 16px 18px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #3b82f6;
+        }
+        .q-text {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 20px;
+            padding-left: 8px;
+        }
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+        .options input[type="radio"] {
+            width: 17px;
+            height: 17px;
+            accent-color: #2563eb;
+            flex-shrink: 0;
+        }
+        .cq-answer {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            margin-top: 6px;
+            background: white;
+        }
+        .cq-answer:focus {
+            outline: 2px solid #3b82f6;
+            border-color: transparent;
+        }
+        .btn-container {
+            text-align: center;
+            margin: 30px 0 15px;
+        }
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 14px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .submit-btn:hover { background: #1d4ed8; transform: scale(1.02); }
+        .submit-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        .result-box {
+            text-align: center;
+            background: #dbeafe;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-top: 25px;
+            border: 2px dashed #3b82f6;
+            display: none;
+        }
+        .result-box span {
+            font-size: 2.8rem;
+            color: #dc2626;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-align: center;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            .options { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="examContainer">
+    <h1>⚡ SSC পদার্থবিজ্ঞান (কঠিন)</h1>
+    <div class="exam-info">
+        <span>📝 মোট নম্বর: ২৫ (MCQ=২×৫, CQ=৩×৫)</span>
+        <span class="timer-box" id="timerDisplay">⏱️ ১৫:০০</span>
+    </div>
+
+    <form id="examForm">
+        <!-- MCQ Section -->
+        <div class="section-title">📌 বহুনির্বাচনি (MCQ) – প্রতিটি ২ নম্বর</div>
+
+        <div class="question-block">
+            <span class="q-text">১. একটি লিফট (g + a) ত্বরণে উপরে উঠলে তার ভেতরের একজন মানুষের আপাত ভর কীরূপ হবে?</span>
+            <div class="options">
+                <label><input type="radio" name="mcq1" value="ক"> ক) প্রকৃত ভরের সমান</label>
+                <label><input type="radio" name="mcq1" value="খ"> খ) প্রকৃত ভরের চেয়ে কম</label>
+                <label><input type="radio" name="mcq1" value="গ"> গ) প্রকৃত ভরের চেয়ে বেশি</label>
+                <label><input type="radio" name="mcq1" value="ঘ"> ঘ) শূন্য</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">২. ঘড়ির কাঁটার গতি এবং একটি সরল দোলকের গতি—এদের ক্ষেত্রে নিচের কোনটি সঠিক?</span>
+            <div class="options">
+                <label><input type="radio" name="mcq2" value="ক"> ক) উভয়ই পর্যায়বৃত্ত গতি, কিন্তু ঘড়ির কাঁটার গতি স্পন্দন গতি নয়</label>
+                <label><input type="radio" name="mcq2" value="খ"> খ) উভয়ই স্পন্দন গতি</label>
+                <label><input type="radio" name="mcq2" value="গ"> গ) ঘড়ির কাঁটার গতি রৈখিক এবং সরল দোলকের গতি ঘূর্ণন গতি</label>
+                <label><input type="radio" name="mcq2" value="ঘ"> ঘ) উভয়ই অ-পর্যায়বৃত্ত গতি</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">৩. একটি গাড়ি ১ম সেকেন্ডে 2m, ২য় সেকেন্ডে 4m এবং ৩য় সেকেন্ডে 6m দূরত্ব অতিক্রম করলে গাড়িটির গতি কেমন?</span>
+            <div class="options">
+                <label><input type="radio" name="mcq3" value="ক"> ক) সমবেগ</label>
+                <label><input type="radio" name="mcq3" value="খ"> খ) সমত্বরণ</label>
+                <label><input type="radio" name="mcq3" value="গ"> গ) অসমত্বরণ</label>
+                <label><input type="radio" name="mcq3" value="ঘ"> ঘ) স্থির</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">৪. কোনো বস্তু r ব্যাসার্ধের বৃত্তাকার পথে অর্ধেক ঘুরে আসলে তার সরণ ও দূরত্বের অনুপাত কত?</span>
+            <div class="options">
+                <label><input type="radio" name="mcq4" value="ক"> ক) 2r : πr</label>
+                <label><input type="radio" name="mcq4" value="খ"> খ) πr : 2r</label>
+                <label><input type="radio" name="mcq4" value="গ"> গ) 2r : 2πr</label>
+                <label><input type="radio" name="mcq4" value="ঘ"> ঘ) r : πr</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">৫. স্থির অবস্থান থেকে মুক্তভাবে পড়ন্ত কোনো বস্তু নির্দিষ্ট সময়ে যে দূরত্ব অতিক্রম করে, তা—</span>
+            <div class="options">
+                <label><input type="radio" name="mcq5" value="ক"> ক) সময়ের সমানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="খ"> খ) সময়ের বর্গের সমানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="গ"> গ) সময়ের ব্যস্তানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="ঘ"> ঘ) সময়ের বর্গের ব্যস্তানুপাতিক</label>
+            </div>
+        </div>
+
+        <!-- CQ Section -->
+        <div class="section-title">✍️ সংক্ষিপ্ত প্রশ্ন (CQ) – প্রতিটি ৩ নম্বর (Banglish উত্তরও চলবে)</div>
+
+        <div class="question-block">
+            <span class="q-text">১. একটি বস্তুকে উপরের দিকে নিক্ষেপ করলে তার সর্বোচ্চ বিন্দুতে বেগ ও ত্বরণ কত? (উভয়ের মান ও দিক উল্লেখ করো)</span>
+            <textarea class="cq-answer" name="cq1" rows="3" placeholder="এখানে আপনার উত্তর দিন (Banglish বা বাংলায়)"></textarea>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">২. বৃত্তাকার পথে সমদ্রুতিতে (সমবেগে নয়) চলমান বস্তুর গতি কি ত্বরিত গতি? যুক্তি দাও।</span>
+            <textarea class="cq-answer" name="cq2" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">৩. ‘g’-এর মান বিষুবীয় অঞ্চলের চেয়ে মেরু অঞ্চলে বেশি কেন—দুটি কারণ লেখো।</span>
+            <textarea class="cq-answer" name="cq3" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">৪. তুমি একটি চলমান বাসে দাঁড়িয়ে আছ। হঠাৎ বাস ব্রেক কষলে তুমি সামনের দিকে ঝুঁকে পড়ো— কেন? (নিউটনের সূত্রের আলোকে ব্যাখ্যা করো)</span>
+            <textarea class="cq-answer" name="cq4" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
+        </div>
+
+        <div class="question-block">
+            <span class="q-text">৫. কোনো বস্তুর বেগের মান অপরিবর্তিত থাকলেও কি তার ত্বরণ থাকতে পারে? যদি পারে, উদাহরণ দাও।</span>
+            <textarea class="cq-answer" name="cq5" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
+        </div>
+
+        <div class="btn-container">
+            <button type="button" class="submit-btn" id="submitBtn" onclick="submitExam()">📥 Submit Exam</button>
+        </div>
+    </form>
+
+    <div id="resultBox" class="result-box">
+        🎯 আপনার প্রাপ্ত নম্বর: <span id="scoreDisplay">০</span> / ২৫
+    </div>
+    <div class="note">✅ সাবমিট করলে শুধু মোট নম্বর দেখাবে – কোন উত্তর সঠিক/ভুল তা দেখাবে না।</div>
+</div>
+
+<script>
+    // ---------- Correct Answers ----------
+    const correctMCQ = {
+        mcq1: 'গ',
+        mcq2: 'ক',
+        mcq3: 'খ',
+        mcq4: 'ক',
+        mcq5: 'খ'
+    };
+
+    // CQ keyword-based checking (Banglish & Bengali mix)
+    // We'll give partial/full marks based on presence of key terms.
+    // Each CQ has a list of required keywords (at least 2-3 must appear).
+    const cqKeywords = [
+        { // Q1
+            keys: ['বেগ', 'শূন্য', 'ত্বরণ', 'g', 'নিচের', 'উপরের', 'সর্বোচ্চ', 'মানে', 'দিক'],
+            minMatch: 3
+        },
+        { // Q2
+            keys: ['হ্যাঁ', 'ত্বরিত', 'বেগের', 'পরিবর্তন', 'দিক', 'বৃত্তাকার', 'কেন্দ্রমুখী', 'দ্রুতি'],
+            minMatch: 3
+        },
+        { // Q3
+            keys: ['ব্যাসার্ধ', 'কম', 'বেশি', 'মেরু', 'বিষুব', 'ঘূর্ণন', 'অপকেন্দ্র', 'বল', 'g'],
+            minMatch: 3
+        },
+        { // Q4
+            keys: ['জড়তা', 'নিউটনের', 'প্রথম', 'সূত্র', 'বেগ', 'ব্রেক', 'সামনের', 'ঝুঁকে', 'গতিশীল'],
+            minMatch: 3
+        },
+        { // Q5
+            keys: ['হ্যাঁ', 'পারে', 'ত্বরণ', 'বেগের', 'মান', 'অপরিবর্তিত', 'দিক', 'বৃত্তাকার', 'উদাহরণ'],
+            minMatch: 3
+        }
+    ];
+
+    // ---------- Timer ----------
+    let timeLeft = 15 * 60; // 15 minutes
+    const timerEl = document.getElementById('timerDisplay');
+    let timerInterval = null;
+
+    function updateTimer() {
+        const mins = Math.floor(timeLeft / 60);
+        const secs = timeLeft % 60;
+        timerEl.textContent = `⏱️ ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerEl.textContent = '⏱️ ০০:০০';
+            // Auto submit
+            if (!document.getElementById('submitBtn').disabled) {
+                submitExam();
+            }
+        }
+    }
+
+    function startTimer() {
+        updateTimer();
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer();
+        }, 1000);
+    }
+
+    // ---------- Submit & Evaluate ----------
+    function submitExam() {
+        const btn = document.getElementById('submitBtn');
+        if (btn.disabled) return;
+        btn.disabled = true;
+        if (timerInterval) clearInterval(timerInterval);
+
+        let totalMarks = 0;
+
+        // --- MCQ (2 marks each) ---
+        for (let i = 1; i <= 5; i++) {
+            const name = 'mcq' + i;
+            const selected = document.querySelector(`input[name="${name}"]:checked`);
+            if (selected && selected.value === correctMCQ[name]) {
+                totalMarks += 2;
+            }
+        }
+
+        // --- CQ (3 marks each) ---
+        for (let i = 1; i <= 5; i++) {
+            const textarea = document.querySelector(`textarea[name="cq${i}"]`);
+            const answer = textarea.value.trim();
+            if (answer === '') continue; // empty = 0
+
+            const keywords = cqKeywords[i-1].keys;
+            const minMatch = cqKeywords[i-1].minMatch;
+            let matchCount = 0;
+            // check each keyword (case insensitive, partial match)
+            const lowerAns = answer.toLowerCase();
+            for (let kw of keywords) {
+                if (lowerAns.includes(kw.toLowerCase())) {
+                    matchCount++;
+                }
+            }
+            // If at least minMatch keywords found, give full 3 marks, else 0 (or partial? we give 0 for simplicity)
+            // But we want to be a bit generous: if matchCount >= minMatch -> 3 marks, else 0.
+            // You can adjust logic.
+            if (matchCount >= minMatch) {
+                totalMarks += 3;
+            }
+            // else 0 marks
+        }
+
+        // Display result
+        document.getElementById('scoreDisplay').textContent = totalMarks;
+        document.getElementById('resultBox').style.display = 'block';
+        document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Optionally disable all inputs
+        document.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
+        // Keep the button disabled
+        btn.disabled = true;
+    }
+
+    // ---------- Start timer on load ----------
+    window.onload = function() {
+        startTimer();
+    };
+</script>
+
+</body>
+</html>
