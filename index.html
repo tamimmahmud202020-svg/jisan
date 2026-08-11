@@ -3,378 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSC Physics – Hard MCQ & CQ Exam</title>
+    <title>PHYSICS🌸 – Exam</title>
     <style>
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Segoe UI', 'Nikosh', 'SolaimanLipi', sans-serif;
-            background: #f2f4f8;
-            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fdf2f8 0%, #fbcfe8 40%, #f9a8d4 100%);
             padding: 20px;
-            color: #1e293b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-attachment: fixed;
         }
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
+            max-width: 920px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
             padding: 25px 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-radius: 38px;
+            box-shadow: 0 20px 60px rgba(244, 114, 182, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
-        h1 {
+        .main-title {
             text-align: center;
-            font-size: 1.8rem;
-            margin-top: 0;
-            color: #0b3b5c;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #831843;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 15px rgba(236, 72, 153, 0.15);
+            margin: 0 0 5px 0;
+            line-height: 1.2;
+        }
+        .main-title span {
+            font-size: 2.5rem;
         }
         .exam-info {
             display: flex;
             justify-content: space-between;
-            background: #eef2ff;
-            padding: 12px 18px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+            background: rgba(255, 228, 235, 0.6);
+            padding: 12px 20px;
+            border-radius: 60px;
+            margin: 15px 0 20px;
             font-weight: 600;
+            color: #4c0519;
             flex-wrap: wrap;
             gap: 10px;
+            border: 1px solid #fbcfe8;
         }
         .timer-box {
-            color: #b91c1c;
-            font-size: 1.2rem;
-            background: #fee2e2;
-            padding: 5px 15px;
-            border-radius: 30px;
+            background: #fecdd3;
+            padding: 4px 20px;
+            border-radius: 40px;
+            color: #9f1239;
+            font-size: 1.15rem;
         }
         .section-title {
-            background: #dbeafe;
-            padding: 8px 16px;
-            border-radius: 8px;
+            background: #fce7f3;
+            padding: 8px 18px;
+            border-radius: 30px;
             margin: 25px 0 15px;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: #831843;
+            display: inline-block;
+            border: 1px solid #f9a8d4;
         }
         .question-block {
-            background: #f8fafc;
+            background: rgba(255, 255, 255, 0.7);
             padding: 16px 18px;
-            margin-bottom: 18px;
-            border-radius: 10px;
-            border-left: 5px solid #3b82f6;
+            margin-bottom: 16px;
+            border-radius: 20px;
+            border-left: 6px solid #f472b6;
+            box-shadow: 0 4px 12px rgba(244, 114, 182, 0.08);
         }
         .q-text {
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.03rem;
             margin-bottom: 10px;
             display: block;
+            color: #1e1b4b;
         }
         .options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px 20px;
-            padding-left: 8px;
+            gap: 4px 20px;
+            padding-left: 6px;
         }
         .options label {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             cursor: pointer;
-            padding: 4px 0;
+            padding: 6px 10px;
+            border-radius: 30px;
+            transition: 0.15s;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid transparent;
+        }
+        .options label:hover:not(:has(input:disabled)) {
+            background: #fce7f3;
+            border-color: #f9a8d4;
         }
         .options input[type="radio"] {
-            width: 17px;
-            height: 17px;
-            accent-color: #2563eb;
+            width: 18px;
+            height: 18px;
+            accent-color: #ec4899;
             flex-shrink: 0;
+            cursor: pointer;
+        }
+        .options input[type="radio"]:disabled {
+            accent-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        .options label:has(input:disabled) {
+            opacity: 0.75;
+            cursor: not-allowed;
+            background: #f3f4f6;
         }
         .cq-answer {
             width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
+            padding: 12px 16px;
+            border: 2px solid #fbcfe8;
+            border-radius: 16px;
             font-size: 1rem;
             font-family: inherit;
             resize: vertical;
             margin-top: 6px;
-            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            transition: 0.2s;
         }
         .cq-answer:focus {
-            outline: 2px solid #3b82f6;
-            border-color: transparent;
+            outline: none;
+            border-color: #ec4899;
+            box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.15);
         }
         .btn-container {
             text-align: center;
-            margin: 30px 0 15px;
+            margin: 30px 0 10px;
         }
-        .submit-btn {
-            background: #2563eb;
+        .submit-btn, .reveal-btn {
+            background: #ec4899;
             color: white;
             border: none;
-            padding: 14px 50px;
-            font-size: 1.3rem;
+            padding: 14px 45px;
+            font-size: 1.25rem;
             font-weight: 700;
-            border-radius: 50px;
+            border-radius: 60px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37,99,235,0.3);
-            transition: 0.2s;
+            transition: 0.25s;
             font-family: inherit;
+            box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35);
         }
-        .submit-btn:hover { background: #1d4ed8; transform: scale(1.02); }
+        .submit-btn:hover:not(:disabled) {
+            background: #db2777;
+            transform: scale(1.02);
+        }
         .submit-btn:disabled {
-            background: #94a3b8;
-            cursor: not-allowed;
+            background: #cbd5e1;
             box-shadow: none;
+            cursor: not-allowed;
             transform: none;
+        }
+        .reveal-btn {
+            background: #8b5cf6;
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+            display: none;
+            margin-top: 15px;
+        }
+        .reveal-btn:hover {
+            background: #7c3aed;
         }
         .result-box {
             text-align: center;
-            background: #dbeafe;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 1.6rem;
+            background: #fce7f3;
+            padding: 20px;
+            border-radius: 30px;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #1e3a8a;
+            color: #831843;
             margin-top: 25px;
-            border: 2px dashed #3b82f6;
+            border: 2px dashed #f472b6;
             display: none;
         }
         .result-box span {
             font-size: 2.8rem;
-            color: #dc2626;
+            color: #be185d;
+        }
+        .answers-section {
+            background: #fff5f7;
+            border: 2px solid #f472b6;
+            border-radius: 28px;
+            padding: 22px;
+            margin-top: 28px;
+            display: none;
+        }
+        .answers-section h2 {
+            color: #9d174d;
+            text-align: center;
+            border-bottom: 2px solid #fbcfe8;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        .ans-block {
+            background: white;
+            padding: 16px 18px;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            border-left: 6px solid #f472b6;
+        }
+        .ans-correct {
+            color: #16a34a;
+            font-weight: 700;
+        }
+        .ans-explain {
+            color: #1e293b;
+            background: #fdf2f8;
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin-top: 8px;
+            font-size: 0.95rem;
+            border: 1px solid #fbcfe8;
+        }
+        .mark-badge {
+            display: inline-block;
+            background: #f472b6;
+            color: white;
+            padding: 2px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-left: 10px;
         }
         .note {
-            font-size: 0.9rem;
-            color: #64748b;
+            font-size: 0.85rem;
+            color: #9d174d;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 16px;
+            opacity: 0.8;
         }
         @media (max-width: 600px) {
-            .container { padding: 15px; }
+            .container { padding: 16px; }
             .options { grid-template-columns: 1fr; }
+            .main-title { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 <div class="container" id="examContainer">
-    <h1>⚡ SSC পদার্থবিজ্ঞান (কঠিন)</h1>
+    <div class="main-title">PHYSICS<span>🌸</span></div>
+
     <div class="exam-info">
-        <span>📝 মোট নম্বর: ২৫ (MCQ=২×৫, CQ=৩×৫)</span>
+        <span>📝 মোট: ২৫ (MCQ=২×৫, CQ=৩×৫)</span>
         <span class="timer-box" id="timerDisplay">⏱️ ১৫:০০</span>
     </div>
 
     <form id="examForm">
-        <!-- MCQ Section -->
-        <div class="section-title">📌 বহুনির্বাচনি (MCQ) – প্রতিটি ২ নম্বর</div>
+        <!-- MCQ -->
+        <div class="section-title">📌 MCQ (প্রতি প্রশ্ন ২ নম্বর)</div>
 
-        <div class="question-block">
-            <span class="q-text">১. একটি লিফট (g + a) ত্বরণে উপরে উঠলে তার ভেতরের একজন মানুষের আপাত ভর কীরূপ হবে?</span>
-            <div class="options">
-                <label><input type="radio" name="mcq1" value="ক"> ক) প্রকৃত ভরের সমান</label>
-                <label><input type="radio" name="mcq1" value="খ"> খ) প্রকৃত ভরের চেয়ে কম</label>
-                <label><input type="radio" name="mcq1" value="গ"> গ) প্রকৃত ভরের চেয়ে বেশি</label>
-                <label><input type="radio" name="mcq1" value="ঘ"> ঘ) শূন্য</label>
+        <div class="question-block"><span class="q-text">১. লিফট (g + a) ত্বরণে উপরে উঠলে মানুষের আপাত ভর কীরূপ?</span>
+            <div class="options" id="mcq1_group">
+                <label><input type="radio" name="mcq1" value="ক" onclick="lockMCQ(this)"> ক) প্রকৃত ভরের সমান</label>
+                <label><input type="radio" name="mcq1" value="খ" onclick="lockMCQ(this)"> খ) প্রকৃত ভরের চেয়ে কম</label>
+                <label><input type="radio" name="mcq1" value="গ" onclick="lockMCQ(this)"> গ) প্রকৃত ভরের চেয়ে বেশি</label>
+                <label><input type="radio" name="mcq1" value="ঘ" onclick="lockMCQ(this)"> ঘ) শূন্য</label>
             </div>
         </div>
 
-        <div class="question-block">
-            <span class="q-text">২. ঘড়ির কাঁটার গতি এবং একটি সরল দোলকের গতি—এদের ক্ষেত্রে নিচের কোনটি সঠিক?</span>
-            <div class="options">
-                <label><input type="radio" name="mcq2" value="ক"> ক) উভয়ই পর্যায়বৃত্ত গতি, কিন্তু ঘড়ির কাঁটার গতি স্পন্দন গতি নয়</label>
-                <label><input type="radio" name="mcq2" value="খ"> খ) উভয়ই স্পন্দন গতি</label>
-                <label><input type="radio" name="mcq2" value="গ"> গ) ঘড়ির কাঁটার গতি রৈখিক এবং সরল দোলকের গতি ঘূর্ণন গতি</label>
-                <label><input type="radio" name="mcq2" value="ঘ"> ঘ) উভয়ই অ-পর্যায়বৃত্ত গতি</label>
+        <div class="question-block"><span class="q-text">২. ঘড়ির কাঁটা ও সরল দোলক—কোনটি সঠিক?</span>
+            <div class="options" id="mcq2_group">
+                <label><input type="radio" name="mcq2" value="ক" onclick="lockMCQ(this)"> ক) উভয়ই পর্যায়বৃত্ত, কিন্তু ঘড়ির কাঁটা স্পন্দন নয়</label>
+                <label><input type="radio" name="mcq2" value="খ" onclick="lockMCQ(this)"> খ) উভয়ই স্পন্দন গতি</label>
+                <label><input type="radio" name="mcq2" value="গ" onclick="lockMCQ(this)"> গ) ঘড়ির কাঁটা রৈখিক, দোলক ঘূর্ণন</label>
+                <label><input type="radio" name="mcq2" value="ঘ" onclick="lockMCQ(this)"> ঘ) উভয়ই অ-পর্যায়বৃত্ত</label>
             </div>
         </div>
 
-        <div class="question-block">
-            <span class="q-text">৩. একটি গাড়ি ১ম সেকেন্ডে 2m, ২য় সেকেন্ডে 4m এবং ৩য় সেকেন্ডে 6m দূরত্ব অতিক্রম করলে গাড়িটির গতি কেমন?</span>
-            <div class="options">
-                <label><input type="radio" name="mcq3" value="ক"> ক) সমবেগ</label>
-                <label><input type="radio" name="mcq3" value="খ"> খ) সমত্বরণ</label>
-                <label><input type="radio" name="mcq3" value="গ"> গ) অসমত্বরণ</label>
-                <label><input type="radio" name="mcq3" value="ঘ"> ঘ) স্থির</label>
+        <div class="question-block"><span class="q-text">৩. গাড়ি ১ম সেকেন্ডে 2m, ২য় সেকেন্ডে 4m, ৩য় সেকেন্ডে 6m গেলে গতি কেমন?</span>
+            <div class="options" id="mcq3_group">
+                <label><input type="radio" name="mcq3" value="ক" onclick="lockMCQ(this)"> ক) সমবেগ</label>
+                <label><input type="radio" name="mcq3" value="খ" onclick="lockMCQ(this)"> খ) সমত্বরণ</label>
+                <label><input type="radio" name="mcq3" value="গ" onclick="lockMCQ(this)"> গ) অসমত্বরণ</label>
+                <label><input type="radio" name="mcq3" value="ঘ" onclick="lockMCQ(this)"> ঘ) স্থির</label>
             </div>
         </div>
 
-        <div class="question-block">
-            <span class="q-text">৪. কোনো বস্তু r ব্যাসার্ধের বৃত্তাকার পথে অর্ধেক ঘুরে আসলে তার সরণ ও দূরত্বের অনুপাত কত?</span>
-            <div class="options">
-                <label><input type="radio" name="mcq4" value="ক"> ক) 2r : πr</label>
-                <label><input type="radio" name="mcq4" value="খ"> খ) πr : 2r</label>
-                <label><input type="radio" name="mcq4" value="গ"> গ) 2r : 2πr</label>
-                <label><input type="radio" name="mcq4" value="ঘ"> ঘ) r : πr</label>
+        <div class="question-block"><span class="q-text">৪. r ব্যাসার্ধের বৃত্তের অর্ধেক ঘুরে এলে সরণ : দূরত্ব = ?</span>
+            <div class="options" id="mcq4_group">
+                <label><input type="radio" name="mcq4" value="ক" onclick="lockMCQ(this)"> ক) 2r : πr</label>
+                <label><input type="radio" name="mcq4" value="খ" onclick="lockMCQ(this)"> খ) πr : 2r</label>
+                <label><input type="radio" name="mcq4" value="গ" onclick="lockMCQ(this)"> গ) 2r : 2πr</label>
+                <label><input type="radio" name="mcq4" value="ঘ" onclick="lockMCQ(this)"> ঘ) r : πr</label>
             </div>
         </div>
 
-        <div class="question-block">
-            <span class="q-text">৫. স্থির অবস্থান থেকে মুক্তভাবে পড়ন্ত কোনো বস্তু নির্দিষ্ট সময়ে যে দূরত্ব অতিক্রম করে, তা—</span>
-            <div class="options">
-                <label><input type="radio" name="mcq5" value="ক"> ক) সময়ের সমানুপাতিক</label>
-                <label><input type="radio" name="mcq5" value="খ"> খ) সময়ের বর্গের সমানুপাতিক</label>
-                <label><input type="radio" name="mcq5" value="গ"> গ) সময়ের ব্যস্তানুপাতিক</label>
-                <label><input type="radio" name="mcq5" value="ঘ"> ঘ) সময়ের বর্গের ব্যস্তানুপাতিক</label>
+        <div class="question-block"><span class="q-text">৫. মুক্তভাবে পড়ন্ত বস্তুর অতিক্রান্ত দূরত্ব নির্দিষ্ট সময়ে—</span>
+            <div class="options" id="mcq5_group">
+                <label><input type="radio" name="mcq5" value="ক" onclick="lockMCQ(this)"> ক) সময়ের সমানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="খ" onclick="lockMCQ(this)"> খ) সময়ের বর্গের সমানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="গ" onclick="lockMCQ(this)"> গ) সময়ের ব্যস্তানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="ঘ" onclick="lockMCQ(this)"> ঘ) সময়ের বর্গের ব্যস্তানুপাতিক</label>
             </div>
         </div>
 
-        <!-- CQ Section -->
-        <div class="section-title">✍️ সংক্ষিপ্ত প্রশ্ন (CQ) – প্রতিটি ৩ নম্বর (Banglish উত্তরও চলবে)</div>
-
-        <div class="question-block">
-            <span class="q-text">১. একটি বস্তুকে উপরের দিকে নিক্ষেপ করলে তার সর্বোচ্চ বিন্দুতে বেগ ও ত্বরণ কত? (উভয়ের মান ও দিক উল্লেখ করো)</span>
-            <textarea class="cq-answer" name="cq1" rows="3" placeholder="এখানে আপনার উত্তর দিন (Banglish বা বাংলায়)"></textarea>
-        </div>
-
-        <div class="question-block">
-            <span class="q-text">২. বৃত্তাকার পথে সমদ্রুতিতে (সমবেগে নয়) চলমান বস্তুর গতি কি ত্বরিত গতি? যুক্তি দাও।</span>
-            <textarea class="cq-answer" name="cq2" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
-        </div>
-
-        <div class="question-block">
-            <span class="q-text">৩. ‘g’-এর মান বিষুবীয় অঞ্চলের চেয়ে মেরু অঞ্চলে বেশি কেন—দুটি কারণ লেখো।</span>
-            <textarea class="cq-answer" name="cq3" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
-        </div>
-
-        <div class="question-block">
-            <span class="q-text">৪. তুমি একটি চলমান বাসে দাঁড়িয়ে আছ। হঠাৎ বাস ব্রেক কষলে তুমি সামনের দিকে ঝুঁকে পড়ো— কেন? (নিউটনের সূত্রের আলোকে ব্যাখ্যা করো)</span>
-            <textarea class="cq-answer" name="cq4" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
-        </div>
-
-        <div class="question-block">
-            <span class="q-text">৫. কোনো বস্তুর বেগের মান অপরিবর্তিত থাকলেও কি তার ত্বরণ থাকতে পারে? যদি পারে, উদাহরণ দাও।</span>
-            <textarea class="cq-answer" name="cq5" rows="3" placeholder="এখানে আপনার উত্তর দিন"></textarea>
-        </div>
+        <!-- CQ -->
+        <div class="section-title">✍️ CQ (প্রতি প্রশ্ন ৩ নম্বর)</div>
+        <div class="question-block"><span class="q-text">১. সর্বোচ্চ বিন্দুতে বেগ ও ত্বরণ কত? (মান ও দিক সহ)</span><textarea class="cq-answer" name="cq1" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+        <div class="question-block"><span class="q-text">২. বৃত্তাকার পথে সমদ্রুতিতে চললে কি ত্বরিত গতি? যুক্তি দাও।</span><textarea class="cq-answer" name="cq2" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+        <div class="question-block"><span class="q-text">৩. ‘g’-এর মান মেরু অঞ্চলে বিষুব অঞ্চলের চেয়ে বেশি কেন? দুটি কারণ লেখো।</span><textarea class="cq-answer" name="cq3" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+        <div class="question-block"><span class="q-text">৪. বাস ব্রেক করলে সামনে ঝুঁকে পড়ি কেন? (নিউটনের সূত্রের আলোকে ব্যাখ্যা করো)</span><textarea class="cq-answer" name="cq4" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+        <div class="question-block"><span class="q-text">৫. বেগের মান অপরিবর্তিত থাকলেও ত্বরণ থাকতে পারে? উদাহরণ দাও।</span><textarea class="cq-answer" name="cq5" rows="2" placeholder="উত্তর দিন..."></textarea></div>
 
         <div class="btn-container">
-            <button type="button" class="submit-btn" id="submitBtn" onclick="submitExam()">📥 Submit Exam</button>
+            <button type="button" class="submit-btn" id="submitBtn" onclick="submitExam()">📥 জমা দিন (Submit)</button>
         </div>
     </form>
 
     <div id="resultBox" class="result-box">
         🎯 আপনার প্রাপ্ত নম্বর: <span id="scoreDisplay">০</span> / ২৫
+        <br>
+        <button class="reveal-btn" id="revealBtn" onclick="revealAnswers()">🌸 বিস্তারিত উত্তর দেখুন</button>
     </div>
-    <div class="note">✅ সাবমিট করলে শুধু মোট নম্বর দেখাবে – কোন উত্তর সঠিক/ভুল তা দেখাবে না।</div>
+
+    <div id="answersSection" class="answers-section"></div>
+    <div class="note">...................</div>
 </div>
 
 <script>
-    // ---------- Correct Answers ----------
-    const correctMCQ = {
-        mcq1: 'গ',
-        mcq2: 'ক',
-        mcq3: 'খ',
-        mcq4: 'ক',
-        mcq5: 'খ'
+    // MCQ লক
+    function lockMCQ(clickedRadio) {
+        const name = clickedRadio.name;
+        const radios = document.querySelectorAll(`input[name="${name}"]`);
+        radios.forEach(r => r.disabled = true);
+        clickedRadio.checked = true;
+    }
+
+    // ফাজি ম্যাচ (Levenshtein)
+    function levenshtein(a, b) {
+        if (a.length === 0) return b.length;
+        if (b.length === 0) return a.length;
+        const matrix = Array.from({ length: a.length + 1 }, (_, i) => i);
+        for (let j = 1; j <= b.length; j++) {
+            let prev = matrix[0];
+            matrix[0] = j;
+            for (let i = 1; i <= a.length; i++) {
+                const temp = matrix[i];
+                matrix[i] = Math.min(
+                    prev + (a[i - 1] === b[j - 1] ? 0 : 1),
+                    matrix[i] + 1,
+                    matrix[i - 1] + 1
+                );
+                prev = temp;
+            }
+        }
+        return matrix[a.length];
+    }
+    function isFuzzyMatch(word, keyword) {
+        if (!word || !keyword) return false;
+        const w = word.toLowerCase().trim();
+        const k = keyword.toLowerCase().trim();
+        if (w === k) return true;
+        if (k.length <= 2) return w === k;
+        const dist = levenshtein(w, k);
+        const maxDist = Math.max(1, Math.floor(k.length / 3));
+        return dist <= maxDist;
+    }
+
+    // CQ ইভালুয়েশন (শুধু কাউন্ট, কিন্তু দেখাবে না)
+    function evaluateCQ(text, keyList) {
+        if (!text.trim()) return { match: 0 };
+        const tokens = text.split(/[\s,.\n\r?।()\[\]{};:!]+/).filter(t => t.length > 0);
+        let matchCount = 0;
+        for (let kw of keyList) {
+            const kwLower = kw.toLowerCase();
+            for (let token of tokens) {
+                if (isFuzzyMatch(token, kwLower)) {
+                    matchCount++;
+                    break;
+                }
+            }
+        }
+        return { match: matchCount };
+    }
+
+    // ===== সঠিক উত্তর =====
+    const correctMCQ = { mcq1:'গ', mcq2:'ক', mcq3:'খ', mcq4:'ক', mcq5:'খ' };
+
+    const mcqExplanations = {
+        mcq1: { opt: 'গ', text: 'প্রকৃত ভরের চেয়ে বেশি', exp: 'লিফট উপরে উঠলে আপাত ওজন = m(g+a)। আপাত ভর = m(g+a)/g, যা প্রকৃত ভর m-এর চেয়ে বেশি। ভর কিন্তু কখনো পরিবর্তিত হয় না, পরিবর্তিত হয় আপাত ওজন।' },
+        mcq2: { opt: 'ক', text: 'উভয়ই পর্যায়বৃত্ত, কিন্তু ঘড়ির কাঁটা স্পন্দন নয়', exp: 'সব স্পন্দন গতি পর্যায়বৃত্ত, কিন্তু সব পর্যায়বৃত্ত গতি স্পন্দন নয়। দোলক সামনে-পেছনে (দিক পরিবর্তন) তাই স্পন্দন; ঘড়ির কাঁটা একদিকে ঘোরে তাই শুধু পর্যায়বৃত্ত।' },
+        mcq3: { opt: 'খ', text: 'সমত্বরণ', exp: 'n-তম সেকেন্ডের সূত্র: dₙ = u + a/2 (2n-1)। d₁=2, d₂=4, d₃=6। পার্থক্য (d₂-d₁)=(d₃-d₂)=2, অর্থাৎ a=2 m/s² ধ্রুবক → সমত্বরণ।' },
+        mcq4: { opt: 'ক', text: '2r : πr', exp: 'অর্ধেক বৃত্তে দূরত্ব = অর্ধপরিধি = πr। সরণ = ব্যাস = 2r। সুতরাং অনুপাত = 2r : πr।' },
+        mcq5: { opt: 'খ', text: 'সময়ের বর্গের সমানুপাতিক', exp: 'মুক্ত পড়ন্ত গতিতে s = ½gt²। তাই দূরত্ব সময়ের বর্গের সমানুপাতিক (বেগ v=gt সময়ের সমানুপাতিক—এখানে দূরত্ব জিজ্ঞেস করা হয়েছে)।' }
     };
 
-    // CQ keyword-based checking (Banglish & Bengali mix)
-    // We'll give partial/full marks based on presence of key terms.
-    // Each CQ has a list of required keywords (at least 2-3 must appear).
-    const cqKeywords = [
-        { // Q1
-            keys: ['বেগ', 'শূন্য', 'ত্বরণ', 'g', 'নিচের', 'উপরের', 'সর্বোচ্চ', 'মানে', 'দিক'],
-            minMatch: 3
-        },
-        { // Q2
-            keys: ['হ্যাঁ', 'ত্বরিত', 'বেগের', 'পরিবর্তন', 'দিক', 'বৃত্তাকার', 'কেন্দ্রমুখী', 'দ্রুতি'],
-            minMatch: 3
-        },
-        { // Q3
-            keys: ['ব্যাসার্ধ', 'কম', 'বেশি', 'মেরু', 'বিষুব', 'ঘূর্ণন', 'অপকেন্দ্র', 'বল', 'g'],
-            minMatch: 3
-        },
-        { // Q4
-            keys: ['জড়তা', 'নিউটনের', 'প্রথম', 'সূত্র', 'বেগ', 'ব্রেক', 'সামনের', 'ঝুঁকে', 'গতিশীল'],
-            minMatch: 3
-        },
-        { // Q5
-            keys: ['হ্যাঁ', 'পারে', 'ত্বরণ', 'বেগের', 'মান', 'অপরিবর্তিত', 'দিক', 'বৃত্তাকার', 'উদাহরণ'],
-            minMatch: 3
-        }
+    const cqData = [
+        { model: 'সর্বোচ্চ বিন্দুতে বেগ = ০ m/s (শূন্য)। ত্বরণ = g = ৯.৮ m/s² (নিচের দিকে)। কারণ সেখানে অভিকর্ষজ ত্বরণ কাজ করে।',
+          keys: ['বেগ','শূন্য','সর্বোচ্চ','ত্বরণ','g','নিচের','দিকে','velocity','zero','acceleration','downward','shunno','toron','nicher'] },
+        { model: 'হ্যাঁ, এটি ত্বরিত গতি। কারণ বৃত্তাকার পথে দ্রুতি (মান) স্থির থাকলেও বেগের দিক প্রতি মুহূর্তে বদলায়। তাই বেগের পরিবর্তন হয় এবং কেন্দ্রমুখী ত্বরণ সৃষ্টি হয়।',
+          keys: ['হ্যাঁ','ত্বরিত','বেগের','দিক','পরিবর্তন','বৃত্তাকার','কেন্দ্রমুখী','দ্রুতি','yes','accelerated','velocity','direction','change','circular','centripetal','speed'] },
+        { model: '১. মেরুতে পৃথিবীর ব্যাসার্ধ কম (R কম), সূত্র g=GM/R² অনুযায়ী g বেশি। ২. বিষুবতে ঘূর্ণনজনিত অপকেন্দ্র বল বেশি, যা অভিকর্ষের বিরুদ্ধে কাজ করে; মেরুতে এটি প্রায় শূন্য।',
+          keys: ['ব্যাসার্ধ','কম','মেরু','বিষুব','অপকেন্দ্র','বল','ঘূর্ণন','radius','pole','equator','centrifugal','g','beshi','kom'] },
+        { model: 'ব্রেক কষার আগে আমার শরীর বাসের সাথে চলছিল। ব্রেক কষলে বাস থামতে চায়, কিন্তু আমার শরীর জড়তার কারণে পূর্বের গতিশীল অবস্থা বজায় রাখতে চায়, তাই আমি সামনে ঝুঁকে পড়ি (নিউটনের ১ম সূত্র)।',
+          keys: ['জড়তা','নিউটনের','প্রথম','সূত্র','বেগ','গতিশীল','অবস্থা','ব্রেক','inertia','newton','first','law','motion','jortota'] },
+        { model: 'হ্যাঁ, থাকতে পারে। যেমন: বৃত্তাকার পথে সমদ্রুতিতে চললে বেগের মান অপরিবর্তিত থাকে, কিন্তু দিক পরিবর্তিত হয়। তাই বেগের পরিবর্তন হয় এবং কেন্দ্রমুখী ত্বরণ থাকে।',
+          keys: ['হ্যাঁ','পারে','ত্বরণ','বেগের','মান','অপরিবর্তিত','দিক','বৃত্তাকার','উদাহরণ','yes','acceleration','speed','constant','direction','circular','example'] }
     ];
 
-    // ---------- Timer ----------
-    let timeLeft = 15 * 60; // 15 minutes
+    // টাইমার
+    let timeLeft = 15 * 60;
     const timerEl = document.getElementById('timerDisplay');
     let timerInterval = null;
-
     function updateTimer() {
-        const mins = Math.floor(timeLeft / 60);
-        const secs = timeLeft % 60;
-        timerEl.textContent = `⏱️ ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        const m = Math.floor(timeLeft/60), s = timeLeft%60;
+        timerEl.textContent = `⏱️ ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
             timerEl.textContent = '⏱️ ০০:০০';
-            // Auto submit
-            if (!document.getElementById('submitBtn').disabled) {
-                submitExam();
-            }
+            if (!document.getElementById('submitBtn').disabled) submitExam();
         }
     }
+    function startTimer() { updateTimer(); timerInterval = setInterval(() => { timeLeft--; updateTimer(); }, 1000); }
 
-    function startTimer() {
-        updateTimer();
-        timerInterval = setInterval(() => {
-            timeLeft--;
-            updateTimer();
-        }, 1000);
-    }
-
-    // ---------- Submit & Evaluate ----------
+    // সাবমিট
     function submitExam() {
         const btn = document.getElementById('submitBtn');
         if (btn.disabled) return;
         btn.disabled = true;
         if (timerInterval) clearInterval(timerInterval);
 
-        let totalMarks = 0;
-
-        // --- MCQ (2 marks each) ---
-        for (let i = 1; i <= 5; i++) {
-            const name = 'mcq' + i;
-            const selected = document.querySelector(`input[name="${name}"]:checked`);
-            if (selected && selected.value === correctMCQ[name]) {
-                totalMarks += 2;
-            }
+        let total = 0;
+        for (let i=1; i<=5; i++) {
+            const name = 'mcq'+i;
+            const sel = document.querySelector(`input[name="${name}"]:checked`);
+            if (sel && sel.value === correctMCQ[name]) total += 2;
+        }
+        for (let i=1; i<=5; i++) {
+            const ta = document.querySelector(`textarea[name="cq${i}"]`);
+            const ans = ta.value.trim();
+            if (!ans) continue;
+            const res = evaluateCQ(ans, cqData[i-1].keys);
+            const m = res.match;
+            if (m >= 5) total += 3;
+            else if (m >= 3) total += 2;
+            else if (m >= 1) total += 1;
         }
 
-        // --- CQ (3 marks each) ---
-        for (let i = 1; i <= 5; i++) {
-            const textarea = document.querySelector(`textarea[name="cq${i}"]`);
-            const answer = textarea.value.trim();
-            if (answer === '') continue; // empty = 0
-
-            const keywords = cqKeywords[i-1].keys;
-            const minMatch = cqKeywords[i-1].minMatch;
-            let matchCount = 0;
-            // check each keyword (case insensitive, partial match)
-            const lowerAns = answer.toLowerCase();
-            for (let kw of keywords) {
-                if (lowerAns.includes(kw.toLowerCase())) {
-                    matchCount++;
-                }
-            }
-            // If at least minMatch keywords found, give full 3 marks, else 0 (or partial? we give 0 for simplicity)
-            // But we want to be a bit generous: if matchCount >= minMatch -> 3 marks, else 0.
-            // You can adjust logic.
-            if (matchCount >= minMatch) {
-                totalMarks += 3;
-            }
-            // else 0 marks
-        }
-
-        // Display result
-        document.getElementById('scoreDisplay').textContent = totalMarks;
+        document.getElementById('scoreDisplay').textContent = total;
         document.getElementById('resultBox').style.display = 'block';
-        document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        // Optionally disable all inputs
-        document.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
-        // Keep the button disabled
+        document.getElementById('revealBtn').style.display = 'inline-block';
+        document.querySelectorAll('input, textarea').forEach(el => el.disabled = true);
         btn.disabled = true;
+        document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // ---------- Start timer on load ----------
-    window.onload = function() {
-        startTimer();
-    };
-</script>
+    // উত্তর প্রকাশ (শুধু নম্বর + মডেল উত্তর, ডিটেক্টেড কিছুই দেখাবে না)
+    function revealAnswers() {
+        const section = document.getElementById('answersSection');
+        if (section.style.display === 'block') {
+            section.style.display = 'none';
+            document.getElementById('revealBtn').textContent = '🌸 বিস্তারিত উত্তর দেখুন';
+            return;
+        }
 
+        let html = `<h2>📖 সম্পূর্ণ উত্তরপত্র (সঠিক উত্তর + ব্যাখ্যা)</h2>`;
+
+        html += `<div style="background:#fce7f3; padding:8px 16px; border-radius:20px; margin:15px 0 12px; font-weight:bold; color:#831843;">✅ বহুনির্বাচনি (MCQ)</div>`;
+        for (let i=1; i<=5; i++) {
+            const id = 'mcq'+i;
+            const data = mcqExplanations[id];
+            html += `<div class="ans-block">
+                <strong>প্রশ্ন ${i}:</strong> সঠিক উত্তর = <span class="ans-correct">${data.opt}) ${data.text}</span>
+                <div class="ans-explain">📘 ব্যাখ্যা: ${data.exp}</div>
+            </div>`;
+        }
+
+        html += `<div style="background:#fce7f3; padding:8px 16px; border-radius:20px; margin:20px 0 12px; font-weight:bold; color:#831843;">✍️ সংক্ষিপ্ত (CQ) – প্রাপ্ত নম্বর ও মডেল উত্তর</div>`;
+        for (let i=1; i<=5; i++) {
+            const ta = document.querySelector(`textarea[name="cq${i}"]`);
+            const userAns = ta.value.trim() || '(খালি)';
+            const data = cqData[i-1];
+            // শুধু নম্বর বের করি (কিন্তু দেখাব না কীভাবে এলো)
+            const res = evaluateCQ(userAns, data.keys);
+            const m = res.match;
+            let marks = 0;
+            if (m >= 5) marks = 3;
+            else if (m >= 3) marks = 2;
+            else if (m >= 1) marks = 1;
+
+            html += `<div class="ans-block">
+                <strong>প্রশ্ন ${i}:</strong> <span class="mark-badge">প্রাপ্ত নম্বর: ${marks}/৩</span>
+                <div class="ans-explain" style="background:#f1f5f9;">
+                    <strong>📌 মডেল উত্তর:</strong> ${data.model}
+                </div>
+                <details style="margin-top:8px; cursor:pointer;">
+                    <summary style="color:#db2777; font-weight:600;">📝 আপনার লেখা উত্তর দেখুন</summary>
+                    <pre style="white-space:pre-wrap; background:#fdf2f8; padding:10px; border-radius:12px; margin:6px 0 0; border:1px solid #fbcfe8;">${userAns}</pre>
+                </details>
+            </div>`;
+        }
+
+        section.innerHTML = html;
+        section.style.display = 'block';
+        document.getElementById('revealBtn').textContent = '🔒 উত্তর লুকান';
+    }
+
+    window.onload = startTimer;
+</script>
 </body>
 </html>
