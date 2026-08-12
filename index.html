@@ -21,7 +21,7 @@
             background-attachment: fixed;
         }
         .container {
-            max-width: 920px;
+            max-width: 1000px;
             width: 100%;
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
@@ -247,6 +247,11 @@
             margin-top: 16px;
             opacity: 0.8;
         }
+        .sub-q {
+            margin-top: 12px;
+            padding-left: 10px;
+            border-left: 3px solid #f9a8d4;
+        }
         @media (max-width: 600px) {
             .container { padding: 16px; }
             .options { grid-template-columns: 1fr; }
@@ -264,61 +269,84 @@
     </div>
 
     <form id="examForm">
-        <!-- MCQ -->
+        <!-- ===== MCQ ===== -->
         <div class="section-title">📌 MCQ (প্রতি প্রশ্ন ২ নম্বর)</div>
 
-        <div class="question-block"><span class="q-text">১. লিফট (g + a) ত্বরণে উপরে উঠলে মানুষের আপাত ভর কীরূপ?</span>
+        <div class="question-block"><span class="q-text">১. একটি ঘোড়া একটি গাড়িকে সামনের দিকে টানছে। নিউটনের তৃতীয় সূত্র অনুযায়ী, গাড়িও ঘোড়াকে সমান ও বিপরীত বল টানে। তাহলে গাড়ি সামনে যায় কীভাবে?</span>
             <div class="options" id="mcq1_group">
-                <label><input type="radio" name="mcq1" value="ক" onclick="lockMCQ(this)"> ক) প্রকৃত ভরের সমান</label>
-                <label><input type="radio" name="mcq1" value="খ" onclick="lockMCQ(this)"> খ) প্রকৃত ভরের চেয়ে কম</label>
-                <label><input type="radio" name="mcq1" value="গ" onclick="lockMCQ(this)"> গ) প্রকৃত ভরের চেয়ে বেশি</label>
-                <label><input type="radio" name="mcq1" value="ঘ" onclick="lockMCQ(this)"> ঘ) শূন্য</label>
+                <label><input type="radio" name="mcq1" value="ক" onclick="lockMCQ(this)"> ক) গাড়ির টান ঘোড়ার টানের চেয়ে কম বলে</label>
+                <label><input type="radio" name="mcq1" value="খ" onclick="lockMCQ(this)"> খ) ঘোড়ার টান এবং গাড়ির টান একই বস্তুর উপর ক্রিয়া করে না বলে</label>
+                <label><input type="radio" name="mcq1" value="গ" onclick="lockMCQ(this)"> গ) ঘোড়ার টান গাড়ির টানের চেয়ে বেশি বলে</label>
+                <label><input type="radio" name="mcq1" value="ঘ" onclick="lockMCQ(this)"> ঘ) ঘোড়ার ভর গাড়ির ভর অপেক্ষা বেশি বলে</label>
             </div>
         </div>
 
-        <div class="question-block"><span class="q-text">২. ঘড়ির কাঁটা ও সরল দোলক—কোনটি সঠিক?</span>
+        <div class="question-block"><span class="q-text">২. একটি লিফট অবাধে (free fall) নিচে পড়ে যাচ্ছে। লিফটের ভেতর দাঁড়ানো একজন মানুষের ‘আপাত ভর’ কত হবে?</span>
             <div class="options" id="mcq2_group">
-                <label><input type="radio" name="mcq2" value="ক" onclick="lockMCQ(this)"> ক) উভয়ই পর্যায়বৃত্ত, কিন্তু ঘড়ির কাঁটা স্পন্দন নয়</label>
-                <label><input type="radio" name="mcq2" value="খ" onclick="lockMCQ(this)"> খ) উভয়ই স্পন্দন গতি</label>
-                <label><input type="radio" name="mcq2" value="গ" onclick="lockMCQ(this)"> গ) ঘড়ির কাঁটা রৈখিক, দোলক ঘূর্ণন</label>
-                <label><input type="radio" name="mcq2" value="ঘ" onclick="lockMCQ(this)"> ঘ) উভয়ই অ-পর্যায়বৃত্ত</label>
+                <label><input type="radio" name="mcq2" value="ক" onclick="lockMCQ(this)"> ক) তার প্রকৃত ভরের সমান</label>
+                <label><input type="radio" name="mcq2" value="খ" onclick="lockMCQ(this)"> খ) তার প্রকৃত ভরের চেয়ে বেশি</label>
+                <label><input type="radio" name="mcq2" value="গ" onclick="lockMCQ(this)"> গ) শূন্য (0)</label>
+                <label><input type="radio" name="mcq2" value="ঘ" onclick="lockMCQ(this)"> ঘ) অসীম</label>
             </div>
         </div>
 
-        <div class="question-block"><span class="q-text">৩. গাড়ি ১ম সেকেন্ডে 2m, ২য় সেকেন্ডে 4m, ৩য় সেকেন্ডে 6m গেলে গতি কেমন?</span>
+        <div class="question-block"><span class="q-text">৩. একটি গাড়ি ও একটি ট্রাক পরস্পরকে মুখোমুখি সংঘর্ষ করল। সংঘর্ষের সময় কোনটির উপর বেশি বল প্রযুক্ত হয়?</span>
             <div class="options" id="mcq3_group">
-                <label><input type="radio" name="mcq3" value="ক" onclick="lockMCQ(this)"> ক) সমবেগ</label>
-                <label><input type="radio" name="mcq3" value="খ" onclick="lockMCQ(this)"> খ) সমত্বরণ</label>
-                <label><input type="radio" name="mcq3" value="গ" onclick="lockMCQ(this)"> গ) অসমত্বরণ</label>
-                <label><input type="radio" name="mcq3" value="ঘ" onclick="lockMCQ(this)"> ঘ) স্থির</label>
+                <label><input type="radio" name="mcq3" value="ক" onclick="lockMCQ(this)"> ক) গাড়ির উপর</label>
+                <label><input type="radio" name="mcq3" value="খ" onclick="lockMCQ(this)"> খ) ট্রাকের উপর</label>
+                <label><input type="radio" name="mcq3" value="গ" onclick="lockMCQ(this)"> গ) উভয়ের উপর সমান বল</label>
+                <label><input type="radio" name="mcq3" value="ঘ" onclick="lockMCQ(this)"> ঘ) বেগের উপর নির্ভর করে</label>
             </div>
         </div>
 
-        <div class="question-block"><span class="q-text">৪. r ব্যাসার্ধের বৃত্তের অর্ধেক ঘুরে এলে সরণ : দূরত্ব = ?</span>
+        <div class="question-block"><span class="q-text">৪. দড়ি টানাটানি (Tug of war) খেলায় দড়ি কোনো দিকে না গড়িয়ে সাম্যাবস্থায় থাকলে, দড়ির উপর প্রযুক্ত নিট বল কত?</span>
             <div class="options" id="mcq4_group">
-                <label><input type="radio" name="mcq4" value="ক" onclick="lockMCQ(this)"> ক) 2r : πr</label>
-                <label><input type="radio" name="mcq4" value="খ" onclick="lockMCQ(this)"> খ) πr : 2r</label>
-                <label><input type="radio" name="mcq4" value="গ" onclick="lockMCQ(this)"> গ) 2r : 2πr</label>
-                <label><input type="radio" name="mcq4" value="ঘ" onclick="lockMCQ(this)"> ঘ) r : πr</label>
+                <label><input type="radio" name="mcq4" value="ক" onclick="lockMCQ(this)"> ক) দড়ির ভর × ত্বরণ</label>
+                <label><input type="radio" name="mcq4" value="খ" onclick="lockMCQ(this)"> খ) উভয় দলের বলের যোগফল</label>
+                <label><input type="radio" name="mcq4" value="গ" onclick="lockMCQ(this)"> গ) শূন্য (0)</label>
+                <label><input type="radio" name="mcq4" value="ঘ" onclick="lockMCQ(this)"> ঘ) পৃথিবীর অভিকর্ষজ বলের সমান</label>
             </div>
         </div>
 
-        <div class="question-block"><span class="q-text">৫. মুক্তভাবে পড়ন্ত বস্তুর অতিক্রান্ত দূরত্ব নির্দিষ্ট সময়ে—</span>
+        <div class="question-block"><span class="q-text">৫. 2 kg ভরের একটি বল 10 m/s বেগে চলছিল। হঠাৎ এটি দেওয়ালে ধাক্কা খেয়ে একই বেগে ফিরে এলো। দেওয়ালের উপর প্রযুক্ত ইমপালসের মান কত?</span>
             <div class="options" id="mcq5_group">
-                <label><input type="radio" name="mcq5" value="ক" onclick="lockMCQ(this)"> ক) সময়ের সমানুপাতিক</label>
-                <label><input type="radio" name="mcq5" value="খ" onclick="lockMCQ(this)"> খ) সময়ের বর্গের সমানুপাতিক</label>
-                <label><input type="radio" name="mcq5" value="গ" onclick="lockMCQ(this)"> গ) সময়ের ব্যস্তানুপাতিক</label>
-                <label><input type="radio" name="mcq5" value="ঘ" onclick="lockMCQ(this)"> ঘ) সময়ের বর্গের ব্যস্তানুপাতিক</label>
+                <label><input type="radio" name="mcq5" value="ক" onclick="lockMCQ(this)"> ক) ০ N·s</label>
+                <label><input type="radio" name="mcq5" value="খ" onclick="lockMCQ(this)"> খ) ২০ N·s</label>
+                <label><input type="radio" name="mcq5" value="গ" onclick="lockMCQ(this)"> গ) ৪০ N·s</label>
+                <label><input type="radio" name="mcq5" value="ঘ" onclick="lockMCQ(this)"> ঘ) ৮০ N·s</label>
             </div>
         </div>
 
-        <!-- CQ -->
-        <div class="section-title">✍️ CQ (প্রতি প্রশ্ন ৩ নম্বর)</div>
-        <div class="question-block"><span class="q-text">১. সর্বোচ্চ বিন্দুতে বেগ ও ত্বরণ কত? (মান ও দিক সহ)</span><textarea class="cq-answer" name="cq1" rows="2" placeholder="উত্তর দিন..."></textarea></div>
-        <div class="question-block"><span class="q-text">২. বৃত্তাকার পথে সমদ্রুতিতে চললে কি ত্বরিত গতি? যুক্তি দাও।</span><textarea class="cq-answer" name="cq2" rows="2" placeholder="উত্তর দিন..."></textarea></div>
-        <div class="question-block"><span class="q-text">৩. ‘g’-এর মান মেরু অঞ্চলে বিষুব অঞ্চলের চেয়ে বেশি কেন? দুটি কারণ লেখো।</span><textarea class="cq-answer" name="cq3" rows="2" placeholder="উত্তর দিন..."></textarea></div>
-        <div class="question-block"><span class="q-text">৪. বাস ব্রেক করলে সামনে ঝুঁকে পড়ি কেন? (নিউটনের সূত্রের আলোকে ব্যাখ্যা করো)</span><textarea class="cq-answer" name="cq4" rows="2" placeholder="উত্তর দিন..."></textarea></div>
-        <div class="question-block"><span class="q-text">৫. বেগের মান অপরিবর্তিত থাকলেও ত্বরণ থাকতে পারে? উদাহরণ দাও।</span><textarea class="cq-answer" name="cq5" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+        <!-- ===== CQ ===== -->
+        <div class="section-title">✍️ CQ (প্রতি প্রশ্ন ৩ নম্বর) </div>
+
+        <!-- CQ 1 -->
+        <div class="question-block">
+            <span class="q-text">১. একটি 5 kg ভরের ব্লক রুক্ষ টেবিলের (μ = 0.2) উপর রাখা আছে। এটি একটি অলঙ্ঘনীয় ও ভরহীন দড়ির মাধ্যমে টেবিলের প্রান্তে লাগানো পুলি দিয়ে ঝুলন্ত 10 kg ভরের ব্লকের সাথে বাঁধা। সিস্টেমটিকে স্থির অবস্থান থেকে ছেড়ে দেওয়া হলো।</span>
+            <div class="sub-q"><span class="q-text" style="font-weight:500;">(ক) সিস্টেমটির ত্বরণ নির্ণয় করো।</span><textarea class="cq-answer" name="cq1a" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+            <div class="sub-q"><span class="q-text" style="font-weight:500;">(খ) ২ সেকেন্ড পর দড়িটি হঠাৎ ছিড়ে গেলে, ২ সেকেন্ড শেষে টেবিলের উপর থাকা ৫ কেজি ব্লকটির বেগ কত ছিল?</span><textarea class="cq-answer" name="cq1b" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+            <div class="sub-q"><span class="q-text" style="font-weight:500;">(গ) দড়ি ছিড়ে যাওয়ার পর ৫ কেজি ব্লকটি থামতে কত দূরত্ব অতিক্রম করবে?</span><textarea class="cq-answer" name="cq1c" rows="2" placeholder="উত্তর দিন..."></textarea></div>
+        </div>
+
+        <!-- CQ 2 -->
+        <div class="question-block"><span class="q-text">২. "ঘোড়া যদি গাড়িকে টানে, তবে নিউটনের তৃতীয় সূত্রমতে গাড়িও ঘোড়াকে পিছনে টানে। তাহলে গাড়ি কখনোই সামনে যেতে পারবে না"—উক্তিটির যৌক্তিকতা বিশ্লেষণ করো। ভুল নাকি সঠিক?</span>
+            <textarea class="cq-answer" name="cq2" rows="3" placeholder="উত্তর দিন..."></textarea>
+        </div>
+
+        <!-- CQ 3 -->
+        <div class="question-block"><span class="q-text">৩. কোনো বস্তুর ভরবেগ (Momentum) অপরিবর্তিত থাকলে, কি তার উপর নিট বল শূন্য হবে? নিউটনের সূত্রের আলোকে ব্যাখ্যা করো।</span>
+            <textarea class="cq-answer" name="cq3" rows="3" placeholder="উত্তর দিন..."></textarea>
+        </div>
+
+        <!-- CQ 4 -->
+        <div class="question-block"><span class="q-text">৪. একজন ক্রিকেটার দ্রুতগতিতে আসা বলকে হাত দিয়ে ধরে ফেলে। ক্যাচ নেওয়ার সময় সে হাত পেছনের দিকে টেনে নেয় কেন? ত্বরণ ও বলের ধারণা ব্যবহার করে বিশ্লেষণ করো।</span>
+            <textarea class="cq-answer" name="cq4" rows="3" placeholder="উত্তর দিন..."></textarea>
+        </div>
+
+        <!-- CQ 5 -->
+        <div class="question-block"><span class="q-text">৫. চলন্ত বাসের ভেতর একজন যাত্রী একটি বল সোজা উপরের দিকে নিক্ষেপ করলেন। বলটি কী তার হাতে ফিরে আসবে, নাকি পেছনে পড়বে? বাসটির গতি (সমবেগ, সুষম ত্বরণ, মন্দন)-এর উপর ভিত্তি করে পৃথক পৃথক উত্তর দাও।</span>
+            <textarea class="cq-answer" name="cq5" rows="3" placeholder="উত্তর দিন..."></textarea>
+        </div>
 
         <div class="btn-container">
             <button type="button" class="submit-btn" id="submitBtn" onclick="submitExam()">📥 জমা দিন (Submit)</button>
@@ -332,11 +360,13 @@
     </div>
 
     <div id="answersSection" class="answers-section"></div>
-    <div class="note">...................</div>
+    <div class="note">।</div>
 </div>
 
 <script>
-    // MCQ লক
+    // ================================================================
+    // 1. MCQ LOCK
+    // ================================================================
     function lockMCQ(clickedRadio) {
         const name = clickedRadio.name;
         const radios = document.querySelectorAll(`input[name="${name}"]`);
@@ -344,7 +374,9 @@
         clickedRadio.checked = true;
     }
 
-    // ফাজি ম্যাচ (Levenshtein)
+    // ================================================================
+    // 2. FUZZY MATCH (Levenshtein) – Bangla / English / Banglish / Typo
+    // ================================================================
     function levenshtein(a, b) {
         if (a.length === 0) return b.length;
         if (b.length === 0) return a.length;
@@ -375,16 +407,22 @@
         return dist <= maxDist;
     }
 
-    // CQ ইভালুয়েশন (শুধু কাউন্ট, কিন্তু দেখাবে না)
+    // ================================================================
+    // 3. CQ EVALUATION (only count, never shown)
+    // ================================================================
     function evaluateCQ(text, keyList) {
         if (!text.trim()) return { match: 0 };
-        const tokens = text.split(/[\s,.\n\r?।()\[\]{};:!]+/).filter(t => t.length > 0);
+        const tokens = text.split(/[\s,.\n\r?।()\[\]{};:!-]+/).filter(t => t.length > 0);
         let matchCount = 0;
+        const usedKeys = new Set();
         for (let kw of keyList) {
             const kwLower = kw.toLowerCase();
             for (let token of tokens) {
                 if (isFuzzyMatch(token, kwLower)) {
-                    matchCount++;
+                    if (!usedKeys.has(kwLower)) {
+                        usedKeys.add(kwLower);
+                        matchCount++;
+                    }
                     break;
                 }
             }
@@ -392,31 +430,86 @@
         return { match: matchCount };
     }
 
-    // ===== সঠিক উত্তর =====
-    const correctMCQ = { mcq1:'গ', mcq2:'ক', mcq3:'খ', mcq4:'ক', mcq5:'খ' };
-
-    const mcqExplanations = {
-        mcq1: { opt: 'গ', text: 'প্রকৃত ভরের চেয়ে বেশি', exp: 'লিফট উপরে উঠলে আপাত ওজন = m(g+a)। আপাত ভর = m(g+a)/g, যা প্রকৃত ভর m-এর চেয়ে বেশি। ভর কিন্তু কখনো পরিবর্তিত হয় না, পরিবর্তিত হয় আপাত ওজন।' },
-        mcq2: { opt: 'ক', text: 'উভয়ই পর্যায়বৃত্ত, কিন্তু ঘড়ির কাঁটা স্পন্দন নয়', exp: 'সব স্পন্দন গতি পর্যায়বৃত্ত, কিন্তু সব পর্যায়বৃত্ত গতি স্পন্দন নয়। দোলক সামনে-পেছনে (দিক পরিবর্তন) তাই স্পন্দন; ঘড়ির কাঁটা একদিকে ঘোরে তাই শুধু পর্যায়বৃত্ত।' },
-        mcq3: { opt: 'খ', text: 'সমত্বরণ', exp: 'n-তম সেকেন্ডের সূত্র: dₙ = u + a/2 (2n-1)। d₁=2, d₂=4, d₃=6। পার্থক্য (d₂-d₁)=(d₃-d₂)=2, অর্থাৎ a=2 m/s² ধ্রুবক → সমত্বরণ।' },
-        mcq4: { opt: 'ক', text: '2r : πr', exp: 'অর্ধেক বৃত্তে দূরত্ব = অর্ধপরিধি = πr। সরণ = ব্যাস = 2r। সুতরাং অনুপাত = 2r : πr।' },
-        mcq5: { opt: 'খ', text: 'সময়ের বর্গের সমানুপাতিক', exp: 'মুক্ত পড়ন্ত গতিতে s = ½gt²। তাই দূরত্ব সময়ের বর্গের সমানুপাতিক (বেগ v=gt সময়ের সমানুপাতিক—এখানে দূরত্ব জিজ্ঞেস করা হয়েছে)।' }
+    // ================================================================
+    // 4. CORRECT ANSWERS & DATA (MCQ + CQ models + 100+ keywords)
+    // ================================================================
+    const correctMCQ = {
+        mcq1: 'খ',
+        mcq2: 'গ',
+        mcq3: 'গ',
+        mcq4: 'গ',
+        mcq5: 'গ'
     };
 
-    const cqData = [
-        { model: 'সর্বোচ্চ বিন্দুতে বেগ = ০ m/s (শূন্য)। ত্বরণ = g = ৯.৮ m/s² (নিচের দিকে)। কারণ সেখানে অভিকর্ষজ ত্বরণ কাজ করে।',
-          keys: ['বেগ','শূন্য','সর্বোচ্চ','ত্বরণ','g','নিচের','দিকে','velocity','zero','acceleration','downward','shunno','toron','nicher'] },
-        { model: 'হ্যাঁ, এটি ত্বরিত গতি। কারণ বৃত্তাকার পথে দ্রুতি (মান) স্থির থাকলেও বেগের দিক প্রতি মুহূর্তে বদলায়। তাই বেগের পরিবর্তন হয় এবং কেন্দ্রমুখী ত্বরণ সৃষ্টি হয়।',
-          keys: ['হ্যাঁ','ত্বরিত','বেগের','দিক','পরিবর্তন','বৃত্তাকার','কেন্দ্রমুখী','দ্রুতি','yes','accelerated','velocity','direction','change','circular','centripetal','speed'] },
-        { model: '১. মেরুতে পৃথিবীর ব্যাসার্ধ কম (R কম), সূত্র g=GM/R² অনুযায়ী g বেশি। ২. বিষুবতে ঘূর্ণনজনিত অপকেন্দ্র বল বেশি, যা অভিকর্ষের বিরুদ্ধে কাজ করে; মেরুতে এটি প্রায় শূন্য।',
-          keys: ['ব্যাসার্ধ','কম','মেরু','বিষুব','অপকেন্দ্র','বল','ঘূর্ণন','radius','pole','equator','centrifugal','g','beshi','kom'] },
-        { model: 'ব্রেক কষার আগে আমার শরীর বাসের সাথে চলছিল। ব্রেক কষলে বাস থামতে চায়, কিন্তু আমার শরীর জড়তার কারণে পূর্বের গতিশীল অবস্থা বজায় রাখতে চায়, তাই আমি সামনে ঝুঁকে পড়ি (নিউটনের ১ম সূত্র)।',
-          keys: ['জড়তা','নিউটনের','প্রথম','সূত্র','বেগ','গতিশীল','অবস্থা','ব্রেক','inertia','newton','first','law','motion','jortota'] },
-        { model: 'হ্যাঁ, থাকতে পারে। যেমন: বৃত্তাকার পথে সমদ্রুতিতে চললে বেগের মান অপরিবর্তিত থাকে, কিন্তু দিক পরিবর্তিত হয়। তাই বেগের পরিবর্তন হয় এবং কেন্দ্রমুখী ত্বরণ থাকে।',
-          keys: ['হ্যাঁ','পারে','ত্বরণ','বেগের','মান','অপরিবর্তিত','দিক','বৃত্তাকার','উদাহরণ','yes','acceleration','speed','constant','direction','circular','example'] }
+    const mcqExplanations = {
+        mcq1: { opt: 'খ', text: 'ঘোড়ার টান এবং গাড়ির টান একই বস্তুর উপর ক্রিয়া করে না বলে', exp: 'ক্রিয়া-প্রতিক্রিয়া দুই ভিন্ন বস্তুর উপর হয়। গাড়ি সামনে যায় কারণ মাটি ঘোড়ার পায়ে যে ঘর্ষণ বল দেয় (বাহ্যিক বল), তা গাড়ির টানের চেয়ে বেশি। আর গাড়ির উপর ঘোড়ার টান গাড়ির ঘর্ষণের চেয়ে বেশি।' },
+        mcq2: { opt: 'গ', text: 'শূন্য (0)', exp: 'আমরা জানি, ওজনই ভরের অনুভূতি দেয়। যেহেতু R = 0, তাই আপাত ওজন শূন্য। আপাত ভর = R/g = 0। এখানে m কিন্তু কখনো পরিবর্তিত হয় না, কিন্তু ‘অনুভূত’ ভর শূন্য!' },
+        mcq3: { opt: 'গ', text: 'উভয়ের উপর সমান বল', exp: 'দেখতে গাড়িটি বেশি ক্ষতিগ্রস্ত হয় বলে মনে হয়, তাই অনেকে ‘গাড়ির উপর বেশি’ বলে ফেলে। কিন্তু নিউটনের তৃতীয় সূত্র মতে, বল সবসময় সমান ও বিপরীত হয়। তবে ত্বরণ হবে গাড়ির বেশি (কারণ ভর কম, a = F/m)। অর্থাৎ বল সমান, কিন্তু ক্ষতি বেশি হয় গাড়ির কারণ এর ত্বরণ বেশি হয়।' },
+        mcq4: { opt: 'গ', text: 'শূন্য (0)', exp: 'নিউটনের প্রথম সূত্র বলে, স্থির বস্তু স্থির থাকতে চায়। দড়ি যদি স্থির থাকে, তাহলে তার ত্বরণ (a) = 0। F = ma সূত্রানুসারে, নিট বলও শূন্য। যদিও উভয় দল প্রচণ্ড বল প্রয়োগ করছে, তারা সমান ও বিপরীত হওয়ায় লব্ধি শূন্য। (কাজেই বল প্রয়োগ করলেই যে নিট বল হবে, তা কিন্তু ঠিক না)।' },
+        mcq5: { opt: 'গ', text: '৪০ N·s', exp: 'গাণিতিক সমাধান: প্রাথমিক ভরবেগ p_i = 2 × 10 = 20 kg·m/s (ধরি সামনে +)। শেষ ভরবেগ p_f = 2 × (-10) = -20 kg·m/s (ফিরে আসায় দিক বিপরীত, তাই - চিহ্ন)। ইমপালস = ভরবেগের পরিবর্তন = p_f - p_i = -20 - 20 = -40 N·s (মান = ৪০)।' }
+    };
+
+    // ----- CQ models & keywords (100+ total) -----
+    // CQ1 has 3 sub-parts, each with its own keys (total > 100 across all CQs)
+    const cqSubs = [
+        { // CQ1(a)
+            model: 'a = (m₂ - μm₁)/(m₁+m₂) × g = (10 - 0.2×5)/15 × 10 = 9/15 × 10 = 6 m/s²',
+            keys: ['ত্বরণ','acceleration','a','m1','m2','mu','g','সূত্র','formula','5','10','0.2','15','9','6','m/s²','meter','second','টান','ঘর্ষণ','পুলি','ব্লক','রুক্ষ','টেবিল','ভর','বেগ','tana','ghorshon','puli','block','rough','table','mass','velocity','accelaration','accleration','turon','toron','shutro','sutro']
+        },
+        { // CQ1(b)
+            model: 'v = u + at = 0 + 6×2 = 12 m/s',
+            keys: ['বেগ','velocity','v','u','at','time','2','12','m/s','সেকেন্ড','শেষ','প্রথম','সময়','second','final','initial','speed','বার','দুই','ছিড়ে','দড়ি','beg','dui','chire','dori','break','snap']
+        },
+        { // CQ1(c)
+            model: 'a\' = μg = 0.2×10 = 2 m/s²  ;  s = v²/(2a\') = 12²/(2×2) = 144/4 = 36 m',
+            keys: ['মন্দন','ঘর্ষণ','থামতে','দূরত্ব','অতিক্রম','stop','distance','deceleration','friction','a\'','mu','g','2','36','meter','m','v²','2a','144','4','থামা','দাড়ি','ছিড়ে','পর','retardation','mandan','ghorshon','duratva','atikrom','twelve','square','divide']
+        }
     ];
 
-    // টাইমার
+    // CQ2, CQ3, CQ4, CQ5 (each with 20+ keys)
+    const cqOthers = [
+        { // CQ2
+            model: 'উক্তিটি সম্পূর্ণ ভুল। গাড়ি সামনে যাওয়ার জন্য ঘোড়ার টানের চেয়ে বড় কোনো বলের প্রয়োজন হয় না; বরং প্রয়োজন হয় ঘোড়ার প্রযুক্ত টান যেন গাড়ির বাধা (ঘর্ষণ) অপেক্ষা বেশি হয়। ঘোড়া সামনে যায় কারণ মাটি ঘোড়ার পায়ে পেছনের দিকে যে ঘর্ষণ বল দেয়, সেটি গাড়ির পেছনের টানের চেয়ে বেশি হয়। এরা ভিন্ন বস্তুর উপর ক্রিয়া করে।',
+            keys: ['ভুল','সঠিক','ঘোড়া','গাড়ি','টান','ঘর্ষণ','বল','নিউটনের','তৃতীয়','সূত্র','ক্রিয়া','প্রতিক্রিয়া','বস্তু','বাধা','নেট','সম','বিপরীত','মাটি','পা','পেছনে','সামনে','wrong','correct','horse','cart','pull','friction','force','third','law','action','reaction','object','oppose','ground','foot']
+        },
+        { // CQ3
+            model: 'হ্যাঁ, নিট বল শূন্য হবে। নিউটনের দ্বিতীয় সূত্র F = dp/dt থেকে, যদি p ধ্রুবক হয়, তাহলে dp/dt = 0, সুতরাং F = 0। এটি নিউটনের প্রথম সূত্রের প্রতিফলন।',
+            keys: ['হ্যাঁ','নিট বল','শূন্য','ভরবেগ','অপরিবর্তিত','ধ্রুবক','নিউটনের','দ্বিতীয়','সূত্র','F','dp','dt','পরিবর্তন','হার','প্রথম','বাহ্যিক বল','গতিশীল','সমবেগ','momentum','constant','zero','net force','second law','rate','change','external','moving','uniform']
+        },
+        { // CQ4
+            model: 'হাত পেছনে টেনে নেওয়ার মূল কারণ হলো বল প্রয়োগের সময় (Δt) বাড়ানো। F = (mv - mu)/t থেকে, সময় বাড়ালে বল কমে যায়, ফলে হাত কম আঘাত পায়।',
+            keys: ['ক্রিকেটার','হাত','পেছনে','টেনে','সময়','বাড়ানো','বল','প্রয়োগ','আঘাত','কম','ত্বরণ','বেগ','পরিবর্তন','নিউটনের','দ্বিতীয়','সূত্র','F','ma','mv','mu','t','force','time','catch','hand','back','pull','injury','reduce','acceleration','velocity','change','second','law']
+        },
+        { // CQ5
+            model: 'সমবেগে: হাতে ফিরে আসবে; সুষম ত্বরণে (বেগ বাড়লে): পেছনে পড়বে; মন্দনে (ব্রেক করলে): সামনে পড়বে। সবগুলো জড়তার ধারণা থেকে ব্যাখ্যা করা যায়।',
+            keys: ['বাস','যাত্রী','বল','উপর','নিক্ষেপ','হাতে','ফিরে','পেছনে','সামনে','সমবেগ','সুষম ত্বরণ','মন্দন','জড়তা','নিউটনের','প্রথম','সূত্র','অনুভূমিক','বেগ','অপরিবর্তিত','ব্রেক','bus','passenger','ball','throw','hand','back','front','uniform','acceleration','retardation','inertia','first','law','horizontal','velocity','constant','brake']
+        }
+    ];
+
+    // Combine all keys for each CQ (for marking)
+    const allCQKeys = [
+        cqSubs[0].keys, cqSubs[1].keys, cqSubs[2].keys,
+        cqOthers[0].keys, cqOthers[1].keys, cqOthers[2].keys, cqOthers[3].keys
+    ];
+    const allCQModels = [
+        cqSubs[0].model, cqSubs[1].model, cqSubs[2].model,
+        cqOthers[0].model, cqOthers[1].model, cqOthers[2].model, cqOthers[3].model
+    ];
+
+    // But for submission we need separate evaluation per CQ.
+    // We'll handle CQ1 as 3 sub-questions (each max 1 mark) and CQ2-CQ5 as full questions (each max 3 marks).
+    // However, to keep uniform, we evaluate each of the 7 fields separately.
+    // But total CQ marks should be 15 (5 questions × 3). So we'll assign:
+    // - CQ1: 3 sub-fields, each 1 mark (max 3)
+    // - CQ2: 1 field, max 3 marks
+    // - CQ3: 1 field, max 3 marks
+    // - CQ4: 1 field, max 3 marks
+    // - CQ5: 1 field, max 3 marks
+    // So total 7 fields, but we sum them accordingly.
+
+    // ================================================================
+    // 5. TIMER (15 min)
+    // ================================================================
     let timeLeft = 15 * 60;
     const timerEl = document.getElementById('timerDisplay');
     let timerInterval = null;
@@ -431,7 +524,9 @@
     }
     function startTimer() { updateTimer(); timerInterval = setInterval(() => { timeLeft--; updateTimer(); }, 1000); }
 
-    // সাবমিট
+    // ================================================================
+    // 6. SUBMIT
+    // ================================================================
     function submitExam() {
         const btn = document.getElementById('submitBtn');
         if (btn.disabled) return;
@@ -439,16 +534,32 @@
         if (timerInterval) clearInterval(timerInterval);
 
         let total = 0;
+
+        // MCQ (2 marks each)
         for (let i=1; i<=5; i++) {
             const name = 'mcq'+i;
             const sel = document.querySelector(`input[name="${name}"]:checked`);
             if (sel && sel.value === correctMCQ[name]) total += 2;
         }
-        for (let i=1; i<=5; i++) {
-            const ta = document.querySelector(`textarea[name="cq${i}"]`);
+
+        // ---- CQ ----
+        // CQ1: 3 sub-parts (each 1 mark)
+        const cq1Fields = ['cq1a', 'cq1b', 'cq1c'];
+        for (let i=0; i<3; i++) {
+            const ta = document.querySelector(`textarea[name="${cq1Fields[i]}"]`);
             const ans = ta.value.trim();
             if (!ans) continue;
-            const res = evaluateCQ(ans, cqData[i-1].keys);
+            const res = evaluateCQ(ans, cqSubs[i].keys);
+            if (res.match >= 3) total += 1;
+        }
+
+        // CQ2 to CQ5: each max 3 marks (threshold: >=5 keywords -> 3, >=3 -> 2, >=1 -> 1)
+        const cqOtherNames = ['cq2', 'cq3', 'cq4', 'cq5'];
+        for (let i=0; i<4; i++) {
+            const ta = document.querySelector(`textarea[name="${cqOtherNames[i]}"]`);
+            const ans = ta.value.trim();
+            if (!ans) continue;
+            const res = evaluateCQ(ans, cqOthers[i].keys);
             const m = res.match;
             if (m >= 5) total += 3;
             else if (m >= 3) total += 2;
@@ -463,7 +574,9 @@
         document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // উত্তর প্রকাশ (শুধু নম্বর + মডেল উত্তর, ডিটেক্টেড কিছুই দেখাবে না)
+    // ================================================================
+    // 7. REVEAL ANSWERS (show only marks & model, NO detection details)
+    // ================================================================
     function revealAnswers() {
         const section = document.getElementById('answersSection');
         if (section.style.display === 'block') {
@@ -474,6 +587,7 @@
 
         let html = `<h2>📖 সম্পূর্ণ উত্তরপত্র (সঠিক উত্তর + ব্যাখ্যা)</h2>`;
 
+        // --- MCQ ---
         html += `<div style="background:#fce7f3; padding:8px 16px; border-radius:20px; margin:15px 0 12px; font-weight:bold; color:#831843;">✅ বহুনির্বাচনি (MCQ)</div>`;
         for (let i=1; i<=5; i++) {
             const id = 'mcq'+i;
@@ -484,27 +598,45 @@
             </div>`;
         }
 
+        // --- CQ ---
         html += `<div style="background:#fce7f3; padding:8px 16px; border-radius:20px; margin:20px 0 12px; font-weight:bold; color:#831843;">✍️ সংক্ষিপ্ত (CQ) – প্রাপ্ত নম্বর ও মডেল উত্তর</div>`;
-        for (let i=1; i<=5; i++) {
-            const ta = document.querySelector(`textarea[name="cq${i}"]`);
-            const userAns = ta.value.trim() || '(খালি)';
-            const data = cqData[i-1];
-            // শুধু নম্বর বের করি (কিন্তু দেখাব না কীভাবে এলো)
-            const res = evaluateCQ(userAns, data.keys);
-            const m = res.match;
-            let marks = 0;
-            if (m >= 5) marks = 3;
-            else if (m >= 3) marks = 2;
-            else if (m >= 1) marks = 1;
 
+        // CQ1 (sub-parts)
+        const labels = ['(ক)', '(খ)', '(গ)'];
+        const cq1Fields = ['cq1a', 'cq1b', 'cq1c'];
+        for (let i=0; i<3; i++) {
+            const ta = document.querySelector(`textarea[name="${cq1Fields[i]}"]`);
+            const ans = ta.value.trim() || '(খালি)';
+            const res = evaluateCQ(ans, cqSubs[i].keys);
+            const mark = (res.match >= 3) ? 1 : 0;
             html += `<div class="ans-block">
-                <strong>প্রশ্ন ${i}:</strong> <span class="mark-badge">প্রাপ্ত নম্বর: ${marks}/৩</span>
-                <div class="ans-explain" style="background:#f1f5f9;">
-                    <strong>📌 মডেল উত্তর:</strong> ${data.model}
-                </div>
+                <strong>প্রশ্ন ১${labels[i]}:</strong> <span class="mark-badge">প্রাপ্ত নম্বর: ${mark}/১</span>
+                <div class="ans-explain" style="background:#f1f5f9;"><strong>📌 মডেল উত্তর:</strong> ${cqSubs[i].model}</div>
                 <details style="margin-top:8px; cursor:pointer;">
                     <summary style="color:#db2777; font-weight:600;">📝 আপনার লেখা উত্তর দেখুন</summary>
-                    <pre style="white-space:pre-wrap; background:#fdf2f8; padding:10px; border-radius:12px; margin:6px 0 0; border:1px solid #fbcfe8;">${userAns}</pre>
+                    <pre style="white-space:pre-wrap; background:#fdf2f8; padding:10px; border-radius:12px; margin:6px 0 0; border:1px solid #fbcfe8;">${ans}</pre>
+                </details>
+            </div>`;
+        }
+
+        // CQ2 to CQ5
+        const cqOtherNames = ['cq2', 'cq3', 'cq4', 'cq5'];
+        for (let i=0; i<4; i++) {
+            const idx = i+2;
+            const ta = document.querySelector(`textarea[name="${cqOtherNames[i]}"]`);
+            const ans = ta.value.trim() || '(খালি)';
+            const res = evaluateCQ(ans, cqOthers[i].keys);
+            const m = res.match;
+            let mark = 0;
+            if (m >= 5) mark = 3;
+            else if (m >= 3) mark = 2;
+            else if (m >= 1) mark = 1;
+            html += `<div class="ans-block">
+                <strong>প্রশ্ন ${idx}:</strong> <span class="mark-badge">প্রাপ্ত নম্বর: ${mark}/৩</span>
+                <div class="ans-explain" style="background:#f1f5f9;"><strong>📌 মডেল উত্তর:</strong> ${cqOthers[i].model}</div>
+                <details style="margin-top:8px; cursor:pointer;">
+                    <summary style="color:#db2777; font-weight:600;">📝 আপনার লেখা উত্তর দেখুন</summary>
+                    <pre style="white-space:pre-wrap; background:#fdf2f8; padding:10px; border-radius:12px; margin:6px 0 0; border:1px solid #fbcfe8;">${ans}</pre>
                 </details>
             </div>`;
         }
